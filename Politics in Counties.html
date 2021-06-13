@@ -1,3 +1,4 @@
+<!-- wp:html -->
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
@@ -10928,7 +10929,7 @@ body.lm-mod-override-cursor * {
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #00c;}
 .cm-s-default .cm-hr {color: #999;}
-.cm-s-default .cm-link {color: #00c;}
+.cm-s-default .cm-link {color: #e2c258;}
 
 .cm-s-default .cm-error {color: #f00;}
 .cm-invalidchar {color: #f00;}
@@ -12528,7 +12529,7 @@ THE SOFTWARE.
   border: none;
   color: var(--jp-ui-font-color1);
   font-size: 12px;
-  table-layout: fixed;
+  table-layout: auto;
   margin-left: auto;
   margin-right: auto;
 }
@@ -14259,7 +14260,7 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="COVID-19,-Demographics,-and-Political-Affiliation">COVID-19, Demographics, and Political Affiliation<a class="anchor-link" href="#COVID-19,-Demographics,-and-Political-Affiliation">&#182;</a></h1><h2 id="A-Machine-Learning-Project-focused-on-the-2020-Presidential-Election">A Machine Learning Project focused on the 2020 Presidential Election<a class="anchor-link" href="#A-Machine-Learning-Project-focused-on-the-2020-Presidential-Election">&#182;</a></h2><h3 id="by-Jonathan-Ferrari">by <a href="https://www.linkedin.com/in/jonathan-ferrari-46b84419b/">Jonathan Ferrari</a><a class="anchor-link" href="#by-Jonathan-Ferrari">&#182;</a></h3>
+<h2 id="A-Machine-Learning-Project-Focused-on-the-2020-Presidential-Election">A Machine Learning Project Focused on the 2020 Presidential Election<a class="anchor-link" href="#A-Machine-Learning-Project-Focused-on-the-2020-Presidential-Election">&#182;</a></h2><h3 id="by-Jonathan-Ferrari">by <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://www.linkedin.com/in/jonathan-ferrari-46b84419b/">Jonathan Ferrari</a><a class="anchor-link" href="#by-Jonathan-Ferrari">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14270,17 +14271,17 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Abstract">Abstract<a class="anchor-link" href="#Abstract">&#182;</a></h3><p>In this notebook, I will create a <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">k-NN (k-nearest neighbors)</a> classifier which takes as its features information about COVID-19 in a certain county and demographic information about that county. The classifier will return a prediction for who won the 2020 Presidential election in this county. The techniques I will use in this project include, but are not limited to: <strong>markdown, $\LaTeX$, importing libraries and <code>.csv</code> files, table manipulation, data cleaning and filtering, defining functions, statistical distribution analysis, for loops, and basic machine learning.</strong></p>
+<h3 id="Abstract">Abstract<a class="anchor-link" href="#Abstract">&#182;</a></h3><p>In this notebook, I will create a <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">k-NN (k-nearest neighbors)</a></span> classifier which takes as its features information about COVID-19 in a certain county and demographic information about that county. The classifier will return a prediction for who won the 2020 Presidential election in this county. The techniques I will use in this project include, but are not limited to: <strong>markdown, $\LaTeX$, importing libraries and <code>.csv</code> files, table manipulation, data cleaning and filtering, defining functions, statistical distribution analysis, for loops, and basic machine learning.</strong></p>
 <p><em>Note:</em> I will use first-person-plural pronouns, such as $\text{"we"}$ and $\text{"our"}$. In doing so, I refer only to myself and the reader.</p>
 <p><strong>Definitions:</strong></p>
-<p><a href="https://monkeylearn.com/blog/what-is-a-classifier/">Classifiers</a>:A classifier in machine learning is an algorithm that automatically orders or categorizes data into one or more of a set of “classes.” One of the most common examples is an email classifier that scans emails to filter them by class label: Spam or Not Spam.</p>
-<p><a href="https://www.thebalance.com/per-capita-what-it-means-calculation-how-to-use-it-3305876">Per Capita</a>: Per capita means per person. It is a Latin term that translates to "by the head." It's commonly used in statistics, economics, and business to report an average per person. It tells you how a country, state, or city affects its residents.</p>
+<p><span style="color: #E2C258;"><a style="color: #E2C258;" href="https://monkeylearn.com/blog/what-is-a-classifier/">Classifiers</a></span>:A classifier in machine learning is an algorithm that automatically orders or categorizes data into one or more of a set of “classes.” One of the most common examples is an email classifier that scans emails to filter them by class label: Spam or Not Spam.</p>
+<p><span style="color: #E2C258;"><a style="color: #E2C258;" href="https://www.thebalance.com/per-capita-what-it-means-calculation-how-to-use-it-3305876">Per Capita</a></span>: Per capita means per person. It is a Latin term that translates to "by the head." It's commonly used in statistics, economics, and business to report an average per person. It tells you how a country, state, or city affects its residents.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong><em>Note</em></strong>: For further clarification of any terms in this project or for information on any basic topic in data science, please refer to <a href="https://inferentialthinking.com/chapters/intro.html"><em>Computational and Inferential Thinking: The Foundations of Data Science</em></a>, by <a href="http://statistics.berkeley.edu/people/ani-adhikari">Ani Adhikari</a>, and <a href="http://denero.org/">John DeNero</a>, with contributions from <a href="https://people.eecs.berkeley.edu/~daw/">David Wagner</a> and <a href="https://amplab.cs.berkeley.edu/author/henrym/">Henry Milner</a>.</p>
+<p><strong><em>Note</em></strong>: For further clarification of any terms in this project or for information on any basic topic in data science, please refer to <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://inferentialthinking.com/chapters/intro.html"><em>Computational and Inferential Thinking: The Foundations of Data Science</em></a></span>, by <span style="color: #E2C258;"><a style="color: #E2C258;" href="http://statistics.berkeley.edu/people/ani-adhikari">Ani Adhikari</a></span>, and <span style="color: #E2C258;"><a style="color: #E2C258;" href="http://denero.org/">John DeNero</a></span>, with contributions from <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://people.eecs.berkeley.edu/~daw/">David Wagner</a></span> and <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://amplab.cs.berkeley.edu/author/henrym/">Henry Milner</a></span>.</p>
 
 </div>
 </div>
@@ -14315,7 +14316,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Next, we will load 4 <code>.csv</code> files with information needed to build the classifier (and drop unnecessesary data), aquired from <a href="https://github.com/nytimes/covid-19-data">New York Times</a>, <a href="https://www.epa.gov/sites/production/files/2016-04/ozone-county-population.xlsx">The EPA</a>, <a href="https://github.com/tonmcg/US_County_Level_Election_Results_08-20/blob/master/2020_US_County_Level_Presidential_Results.csv">Polico and New York Times</a>, and <a href="https://www.openintro.org/data/?data=county_complete">The Cencus Bureau</a></p>
+<p>Next, we will load 4 <code>.csv</code> files with information needed to build the classifier (and drop unnecessesary data), aquired from <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://github.com/nytimes/covid-19-data">New York Times</a></span>, <span style="color: #E2C258;"><a style="color: #E2C258;"  href="https://www.epa.gov/sites/production/files/2016-04/ozone-county-population.xlsx">The EPA</a></span>, <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://github.com/tonmcg/US_County_Level_Election_Results_08-20/blob/master/2020_US_County_Level_Presidential_Results.csv">Polico and New York Times</a></span>, and <span style="color: #E2C258;"><a style="color: #E2C258;"  href="https://www.openintro.org/data/?data=county_complete">The Cencus Bureau</a></span></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14915,7 +14916,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now, because the units in each column are different, we want to convert the data into <a href="https://www.stat.berkeley.edu/~stark/SticiGui/Text/computeR.htm#:~:text=Standard%20units%20are%20a%20way,the%20mean%20of%20the%20data."><em>standard units</em></a> or <em>z-score</em> so that all the data has the same weight in our classifier. We will do this by defining the <code>s_u</code> and <code>standardize</code> functions</p>
+<p>Now, because the units in each column are different, we want to convert the data into <span style="color: #E2C258;"><a style="color: #E2C258;" href="https://www.stat.berkeley.edu/~stark/SticiGui/Text/computeR.htm#:~:text=Standard%20units%20are%20a%20way,the%20mean%20of%20the%20data."><em>standard units</em></a></span> or <em>z-score</em> so that all the data has the same weight in our classifier. We will do this by defining the <code>s_u</code> and <code>standardize</code> functions</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15575,7 +15576,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If you have any questions about this project or require any clarification on concepts/topics, or need a walkthrough of any of my code, do not hesitate to reach out to me at <a href="mailto:jonathanferrari@berkeley.edu">jonathanferrari@berkeley.com</a>. Cheers!</p>
+<p>If you have any questions about this project or require any clarification on concepts/topics, or need a walkthrough of any of my code, do not hesitate to reach out to me at <span style="color: #E2C258;"><a style="color: #E2C258;" href="mailto:jonathanferrari@berkeley.edu">jonathanferrari@berkeley.com</a></span>. Cheers!</p>
 
 </div>
 </div>
@@ -15588,3 +15589,4 @@ a.anchor-link {
 
 
 </html>
+<!-- /wp:html -->
